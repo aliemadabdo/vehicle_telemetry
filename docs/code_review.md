@@ -87,7 +87,7 @@
 - **Use of Polymorphism**: [DONE]
    - The system could be improved by introducing polymorphism to handle different sensor types. Currently, each sensor class is treated individually. Introducing a common interface or virtual functions for sensor behaviors like `printValue()` or `setRandomValue()` could simplify management.
 
-- **Configuration File**:
+- **Configuration File**: [POSTPONDED]
    - Rather than hardcoding sensor ranges and thresholds within the code, consider using a configuration file (e.g., JSON or XML) to store these values. This will make the system more flexible, allowing sensor parameters to be adjusted without recompiling the code.
 
 ---
