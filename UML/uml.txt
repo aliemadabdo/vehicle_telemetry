@@ -1,0 +1,72 @@
+// Digram link: https://www.plantuml.com/plantuml/duml/bLFDRjim3BxxAOGSXZHDMkng14RNx3AWfxROTM0inX6cK9v8foYszTcNA7HZrq3WvHHzF_n8IhvZWIZDpcUb1sRpXCGXcj-PEVmMnf4O7rumteU6R0TiwheFRdm0XRzuZFAyZSZRuBkyrXhoMdGFli5qljP6faSujJXF2YGx7qJD1yMl-aNqc2fKAD-FCTChKmPYKMeVd3MCyWXamquLVKvzscXBhaFmnd6ALSURvkRvsti3VpDTy4EeAcmNV7sSJLofwEpOtJSwO5H-Y7Uq2LEMwAWoEsI62kVddVMaa5ePgINmh-nufDpYkgakQCzZhk3yY5Xidk-nb12NwNz3xbU3Fsg9ozE2Yc9cEFrZZJlufsDydvAlrsI5X144tw_omqLkmyjN4EYZra55WSMLt2V0GYrkZwlOECPL88d1To_qgKQqlSz6dNLqrBwr_0IPBh-E23-d9sShkBqrc-YGhDdGEU8PT_MuXBFd4Ip4_pNTWmZ6rujvbwqFk4S_tglAvP_5ehl8BgxJ3s0TS80FP-ZJmpwpxFXQ9vyd9Xm4azd4A96RBR0fMlzYKRIVRsuQHaw-8PfbUhwvwL3B9JkgF4gWeiZka6opy_y0
+
+@startuml
+!theme reddress-darkblue
+class Sensor {
+    - int lowerBound
+    - int upperBound
+    - float upperAlertThreshold
+    - float lowerAlertThreshold
+    - int value
+    + Sensor(int start, int end, float upperAlert, float lowerAlert)
+    + Sensor()
+    + int getValue() const
+    + void setRandomValue()
+    + void setValue(int val)
+    + bool isAlert()
+    ~ Sensor::~Sensor()
+}
+
+class Logger {
+    - logLevel level;
+    - std::ofstream logFile;
+    + static Logger* getInstance()
+    + void info(string message, int value)
+    + void alert(string message, int value)
+    + void analysis(string message, int value)
+    + void debug(string message, int value)
+}
+
+class Car {
+    - std::vector<std::unique_ptr<Sensor>>* sensors
+    + Car(std::vector<std::unique_ptr<Sensor>>& sens)
+    + void generateRandomVal()
+    + void showData()
+    + void diagnostics()
+    + void adaptiveCruiseControl()
+}
+
+class SpeedSensor {
+    + void printValue(): void  
+    + void break(Sensor): void // friend fn
+}
+
+class TempSensor {
+    + void printValue(): void
+}
+
+class RadarSensor {
+    + void printValue(): void
+}
+
+class BatteryTempSensor {
+    + void printValue(): void
+}
+
+class BatteryLevelSensor {
+    + void printValue(): void
+}
+
+Sensor <|-- SpeedSensor
+Sensor <|-- TempSensor
+Sensor <|-- RadarSensor
+Sensor <|-- BatteryTempSensor 
+Sensor <|-- BatteryLevelSensor 
+
+Car "1" o-- "*" Sensor : has >
+Sensor --> Logger : uses
+Car --> Logger : uses
+
+
+Logger ..> Logger : <<singleton>>
+@enduml
