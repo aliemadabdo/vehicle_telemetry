@@ -1,5 +1,5 @@
 # Car Sensor System
-
+---
 ## Overview
 
 The Car Sensor System is a modular software application designed to monitor various vehicle parameters using different sensors. This system incorporates a logging mechanism to track alerts, analyses, and general information about the vehicle's performance. 
