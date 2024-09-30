@@ -2,6 +2,7 @@
 
 # Ignore build directory
 build/
+Links/
 
 # Prerequisites
 *.d
