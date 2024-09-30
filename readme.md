@@ -50,7 +50,7 @@ The system comprises various sensor classes, a logging mechanism, and a central 
 - **Logger**: A singleton class responsible for logging system information and alerts.
 
 **UML Diagrams**:  
-![system Architecture](UML\vehicleUML_Full.png)
+![system Architecture](./UML/vehicleUML_Full.png)
 - Class relationships between `Car`, `Sensor`, and its derived classes are structured hierarchically.
 - `Logger` interacts with both `Car` and `Sensor`, providing system logging.
 
