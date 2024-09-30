@@ -13,7 +13,7 @@ public:
     void printValue() const override;  // Override the pure virtual function from Sensor
     // the override key word is optional here
 
-    friend void applyBrakes(Sensor* ss);
+    friend void applyBrakes(Sensor* speedsens);
     
 };
 

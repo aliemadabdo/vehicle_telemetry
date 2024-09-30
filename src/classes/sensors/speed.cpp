@@ -20,15 +20,23 @@ void SpeedSensor::printValue() const  {
 
 SpeedSensor::~SpeedSensor(){}
 
-void applyBrakes(Sensor* ss){
-    while(ss->isAlert()){ 
-        int val = ss->getValue();
+/**
+ * @brief Applies brakes by continuously adjusting the sensor's value until the alert condition is resolved.
+ * 
+ * @param ss A pointer to the Sensor object, which represents the speed sensor.
+ * 
+ * The function reduces the sensor value if it exceeds the alert threshold,
+ * simulating the application of brakes. Logs the adjusted value during each iteration.
+ */
+void applyBrakes(Sensor* speedsens){
+    while(speedsens->isAlert()){ 
+        int val = speedsens->getValue();
         if (val > 0){
-            ss->setValue(val-1); 
+            speedsens->setValue(val-1); 
             Logger::getInstance()->alert("BREAKS!! Speed decreased to (km/h): ", val-1);
         }
         else{
-            ss->setValue(val+1); 
+            speedsens->setValue(val+1); 
             Logger::getInstance()->alert("BREAKS!! Speed decreased to (km/h): ", val+1); // -ve
         }
     }     
