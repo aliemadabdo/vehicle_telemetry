@@ -1,4 +1,3 @@
-
 # **Vehicle Telemetry System Documentation**
 
 ## Project Overview
@@ -8,9 +7,12 @@ The Vehicle Telemetry System is an educational project developed to practice Obj
 ## Installation
 
 ### **Prerequisites**
-- **Compiler**: C++11 or later
-- **Build Tools**: Make or CMake (for building the project)
-- **Libraries**: Standard C++ libraries, and any required JSON parsing library for handling configuration files [optional]
+- **Operating System**: Windows (tested on Windows 10 and later)
+- **Compiler**: MinGW (GCC and G++) or any C++ compiler supporting C++11 or later
+- **Build Tools**: CMake (version 3.10 or later) and Make
+- **Environment Configuration**:
+  - Add the `bin` directory of MinGW (e.g., `C:\MinGW\bin`) to your PATH.
+  - Add the `bin` directory of CMake (e.g., `C:\Program Files\CMake\bin`) to your PATH.
 
 ### **Steps for Setup**
 1. Clone the repository:
@@ -97,4 +99,4 @@ A key OOP insight was using the `isAlert()` method. Initially, all sensor values
 
 ## References:
 - C++ Programming: [TheCherno C++ Playlist](https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&ab_channel=TheCherno)
-- C++ Documentation: https://en.cppreference.com/  
+- C++ Documentation: https://en.cppreference.com/

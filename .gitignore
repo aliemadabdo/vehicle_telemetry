@@ -36,3 +36,23 @@ Links/
 *.exe
 *.out
 *.app
+
+# Ignore build artifacts
+CMakeFiles/
+*.cmake
+*.rsp
+*.marks
+*.make
+*.ts
+*.internal
+*.log
+
+# Ignore logs
+logs/*.txt
+
+# Ignore temporary files
+*.tmp
+
+# Ignore IDE-specific files
+*.vscode/
+*.idea/

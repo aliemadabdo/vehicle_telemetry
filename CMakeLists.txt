@@ -2,10 +2,10 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Project name
-project(vehicle_telementary)
+project(vehicle_telemetry)
 
-# Set the C++ standard to C++11 (or 14/17/20 as needed)
-set(CMAKE_CXX_STANDARD 11)
+# Set the C++ standard to C++14 (or 14/17/20 as needed)
+set(CMAKE_CXX_STANDARD 14)
 
 # Specify the executable target and its source files
 add_executable(vehicle_telementary
@@ -21,4 +21,4 @@ add_executable(vehicle_telementary
 )
 
 # Include directories if you have any header files located elsewhere
-# include_directories(classes)
+include_directories(src/include)
